@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scicors</title>
+</head>
+<body>
+    
+    <script>
+
+
+   
+    function playerSelection(){
+    const userInput=prompt("enter:").toLowerCase();
+        if(userInput==="rock" || 
+            userInput==="paper"||
+            userInput==="scissor" )
+                
+            return userInput;   
+
+}
+   
+
+       
+        
+function computerSelection(){
+
+    const arr=["rock","paper","scissor"];
+     const ranItem=arr[Math.floor(Math.random()*arr.length)];
+    
+    return ranItem;
+
+}
+ 
+
+
+
+    
+function result(playerSelection, computerSelection){
+
+    
+ 
+     if (playerSelection===computerSelection){
+        return "it is draw";
+
+     }else if (
+        (playerSelection==="rock" && computerSelection==="scissor")||
+        (playerSelection==="paper" && computerSelection==="rock" ) ||
+        (playerSelection==="scissor" && computerSelection==="paper")
+    
+        ) 
+            {
+        return " user won";
+        } else {
+        return " computer wins";
+
+        }
+    
+}
+
+function playround(){
+const userPlayer=playerSelection();
+const computerPlayer=computerSelection();
+
+console.log("you choose: "+ userPlayer)
+console.log("computer choose: "+computerPlayer);
+console.log(result(userPlayer,computerPlayer));
+
+
+}
+playround();
+
+// console.log("you choose: "+ playerSelection())
+// console.log("computer choose: "+computerSelection());
+// console.log(result(playerSelection(),computerSelection()));
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
